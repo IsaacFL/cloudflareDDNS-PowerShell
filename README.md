@@ -46,7 +46,7 @@ Right click on updateDNS.ps1 click __Run with PowerShell__
 
 ## Automation With Windows Task Scheduler
 
-Run At boot Example:
+Run At boot Example with the updateDNS.ps1 C:\updateDNS.ps1:
 
 * Open Task Scheduler
 * Action -> Crate Task
@@ -58,16 +58,23 @@ Run At boot Example:
     * Begin the task: At startup
     * Delay Task for: 1 minute
     * Enabled
-* __Trigger__
-* 
+* __Actions__
+    * New...
+    * Action: Start a Program
+    * Program/script: _C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe_
+    * Add arguments (optional): _-File C:\updateDNS.ps1_
+    * ok
+    * Enter your user's password when prompted
 
 ## Logs
 
-This Script will create a log file with __only__ the last run information
-Log file will be located at
+This Script will create a log file with __only__ the last run information  
+Log file will be located as a hidden file at the same path as updateDNS.ps1
+
+Log file name:
 
 ```bash
-/usr/local/bin/.updateDNS.log
+.updateDNS.log
 ```
 
 ## License
