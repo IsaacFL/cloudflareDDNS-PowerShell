@@ -1,4 +1,4 @@
-# Cloudflare DDNS - Simple Bash Script
+# Cloudflare DDNS - Simple PowerShell Script
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/fire1ce/3os.org/tree/master/src)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://mit-license.org/)
