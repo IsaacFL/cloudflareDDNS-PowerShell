@@ -24,9 +24,7 @@ Choose __A__ for __all__
 
 ## Installation
 
-```bash
-[Download Link](https://github.com/fire1ce/cloudflareDDNS-PowerShell/archive/main.zip)
-```
+[Download the main.zip file](https://github.com/fire1ce/cloudflareDDNS-PowerShell/archive/main.zip) & Unzip
 
 ## Parameters
 
