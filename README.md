@@ -14,7 +14,7 @@ _Bash Script for Linux and MacOS can be found [here](https://github.com/fire1ce/
 *   DNS Record must be pre created (api-token should only edit dns records)
 *   Enabled running unsigned PowerShell
 
-Start Windows PowerShell with the "Run as Administrator" option.
+Start Windows PowerShell with the "Run as Administrator" option and execute this command
 
 ```powershell
 set-executionpolicy remotesigned
@@ -24,15 +24,11 @@ Choose __A__ for __all__
 
 ## Installation
 
-[Download the main.zip file](https://github.com/fire1ce/cloudflareDDNS-PowerShell/archive/main.zip) & Unzip
+[Download the cloudflareDDNS-PowerShell zip file](https://github.com/fire1ce/cloudflareDDNS-PowerShell/archive/main.zip) & Unzip it
 
 ## Parameters
 
-Update the config parameters at
-
-```bash
-/usr/local/bin/updateDNS
-```
+Update the config parameters at updateDNS.ps1 by editing the file
 
 | __Option__           | __Example__                              | __Description__                                           |
 |----------------------|------------------------------------------|-----------------------------------------------------------|
@@ -46,41 +42,24 @@ Update the config parameters at
 
 ## Running The Script
 
-right click, __Run with PowerShell__
+Right click on updateDNS.ps1 click __Run with PowerShell__
 
-## Automation With Crontab
+## Automation With Windows Task Scheduler
 
-You can run the script via crontab
+Run At boot Example:
 
-```bash
-crontab -e
-```
-
-Here are some Example
-
-Run every minute
-
-```bash
-* * * * * /usr/local/bin/updateDNS
-```
-
-Run at boot
-
-```bash
-@reboot /usr/local/bin/updateDNS
-```
-
-Run 1 minute fater boot
-
-```bash
-@reboot sleep 60 && /usr/local/bin/updateDNS
-```
-
-Run at 08:00
-
-```bash
-0 8 * * * /usr/local/bin/updateDNS
-```
+* Open Task Scheduler
+* Action -> Crate Task
+* __General Menu__
+    * Name: updateDNS
+    * Run whether user is logged on or not
+* __Trigger__
+    * New...
+    * Begin the task: At startup
+    * Delay Task for: 1 minute
+    * Enabled
+* __Trigger__
+* 
 
 ## Logs
 

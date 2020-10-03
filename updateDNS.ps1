@@ -1,13 +1,13 @@
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-# Config 
+##### Config Params
 $what_ip = "internal"                                              ##### Which IP should be used for the record: internal/external
 $what_interface = "Ethernet0"                                       ##### For internal IP, provide interface name
 $dns_record = "ddns.example.com"                                        ##### DNS A record which will be updated
-$zoneid = "8f340afd4f64f88d55fbe0b3a8813deb"                        ##### Cloudflare's Zone ID
+$zoneid = "8f340afd4__Change-ME__0a8813deb"                        ##### Cloudflare's Zone ID
 $proxied = "false"                                                  ##### Use Cloudflare proxy on dns record true/false
 $ttl = 120                                                          ##### 120-7200 in seconds or 1 for Auto
-$cloudflare_api_token = "x8AJcit7YtAhUQ8EzPoDE_UkLoPR3XsoafAE3zZ4"  ##### loudflare API Token keep it private!!!!
+$cloudflare_api_token = "x8AJcit__Change-ME__oDE_UkLo3XsoafAE3zZ4"  ##### loudflare API Token keep it private!!!!
 
 
 
