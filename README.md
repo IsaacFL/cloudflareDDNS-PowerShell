@@ -3,7 +3,7 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/fire1ce/3os.org/tree/master/src)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://mit-license.org/)
 
-Cloudflare DDNS PowerShell for __Windoos__.  
+Cloudflare DDNS PowerShell for __Windows__.  
 Choose any source IP address to update  __external__ or __internal__  _(WAN/LAN)_.  
 Cloudflare's options proxy and TTL configurable via the parameters.  
 _Bash Script for Linux and MacOS can be found [here](https://github.com/fire1ce/cloudflareDDNS-Bash)_
@@ -25,7 +25,7 @@ Choose __A__ for __all__
 ## Installation
 
 ```bash
-Download the zip file
+[Download Link](https://github.com/fire1ce/cloudflareDDNS-PowerShell/archive/main.zip)
 ```
 
 ## Parameters
