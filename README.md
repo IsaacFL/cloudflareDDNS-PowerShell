@@ -9,16 +9,22 @@ Cloudflare's options proxy and TTL configurable via the parameters.
 
 ## Requirements
 
-*   curl
 *   [api-token](https://dash.cloudflare.com/profile/api-tokens) with ZONE-DNS-EDIT Permissions
 *   DNS Record must be pre created (api-token should only edit dns records)
+*   Enabled running unsigned PowerShell
+
+Start Windows PowerShell with the "Run as Administrator" option.
+
+```powershell
+set-executionpolicy remotesigned
+```
+
+Choose __A__ for __all__
 
 ## Installation
 
 ```bash
-wget https://raw.githubusercontent.com/fire1ce/cloudflareDDNS-Bash/main/updateDNS.sh
-sudo chmod +x updateDNS.sh
-sudo mv updateDNS.sh /usr/local/bin/updateDNS
+Download the zip file
 ```
 
 ## Parameters
@@ -41,9 +47,7 @@ Update the config parameters at
 
 ## Running The Script
 
-```bash
-updateDNS
-```
+right click, __Run with PowerShell__
 
 ## Automation With Crontab
 
