@@ -7,9 +7,9 @@ $dns_record = "ddns.example.com"                                        ##### DN
 $zoneid = "ChangeMe"                        ##### Cloudflare's Zone ID
 $proxied = $false                                                  ##### Use Cloudflare proxy on dns record true/false
 $ttl = 120                                                          ##### 120-7200 in seconds or 1 for Auto
-$cloudflare_api_token = "ChangeMe"  ##### loudflare API Token keep it private!!!!
-
-
+$cloudflare_api_token = "ChangeMe"  ##### Cloudflare API Token keep it private!!!!
+  
+$type = "A"                                                      ##### DNS Record Type A
 
 ##### updateDNS.log file of the last run for debug
 $File_LOG = "$PSScriptRoot\.updateDNS.log"
@@ -41,7 +41,7 @@ Write-Output "==> Current IP is $ip" | Tee-Object $File_LOG -Append
 
 ##### get the dns record id and current ip from cloudflare's api
 $dns_record_info = @{
-    Uri     = "https://api.cloudflare.com/client/v4/zones/$zoneid/dns_records?name=$dns_record"
+    Uri     = "https://api.cloudflare.com/client/v4/zones/$zoneid/dns_records?type=$type&name=$dns_record"
     Headers = @{"Authorization" = "Bearer $cloudflare_api_token"; "Content-Type" = "application/json" }
 }
 
@@ -64,7 +64,7 @@ $updateRecord = @{
     Method  = 'PUT'
     Headers = @{"Authorization" = "Bearer $cloudflare_api_token"; "Content-Type" = "application/json" }
     Body    = @{
-        "type"    = "A"
+        "type"    = $type
         "name"    = $dns_record
         "content" = $ip
         "ttl"     = $ttl
