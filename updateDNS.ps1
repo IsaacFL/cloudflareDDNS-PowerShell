@@ -9,11 +9,12 @@ $proxied = $false                                                  ##### Use Clo
 $ttl = 120                                                          ##### 120-7200 in seconds or 1 for Auto
 $cloudflare_api_token = "ChangeMe"  ##### Cloudflare API Token keep it private!!!!
   
-$type = "A"                                                      ##### DNS Record Type A
-
 ##### updateDNS.log file of the last run for debug
 $File_LOG = "$PSScriptRoot\.updateDNS.log"
 $FileName = ".updateDNS.log"
+
+##### DNS Record Type A
+$type = "A"
 
 if (!(Test-Path $File_LOG)) {
     New-Item -ItemType File -Path $PSScriptRoot -Name ($FileName) | Out-Null
@@ -33,7 +34,7 @@ elseif ($what_ip -eq 'internal') {
     $ip = $response.IPAddress.Trim()
 }
 else {
-    Write-Output "missin or incorret what_ip/what_interface parameter" 
+    Write-Output "missing or incorrect what_ip/what_interface parameter" 
 }
 Write-Output "==> Current IP is $ip" | Tee-Object $File_LOG -Append
 
