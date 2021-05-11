@@ -1,9 +1,9 @@
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 ##### Config Params
-$what_ip = "internal"                                              ##### Which IP should be used for the record: internal/external
+$what_ip = "internal"                                              ##### Which IP should be used for the record: internal only for ipv6
 $what_interface = "Ethernet0"                                       ##### For internal IP, provide interface name
-$dns_record = "ddns.example.com"                                        ##### DNS A record which will be updated
+$dns_record = "ddns.example.com"                                        ##### DNS AAAA record which will be updated
 $zoneid = "ChangeMe"                        ##### Cloudflare's Zone ID
 $proxied = $false                                                  ##### Use Cloudflare proxy on dns record true/false
 $ttl = 120                                                          ##### 120-7200 in seconds or 1 for Auto
@@ -13,8 +13,8 @@ $cloudflare_api_token = "ChangeMe"  ##### Cloudflare API Token keep it private!!
 $File_LOG = "$PSScriptRoot\.updateDNS.log"
 $FileName = ".updateDNS.log"
 
-##### DNS Record Type A
-$type = "A"
+##### DNS Record Type AAAA
+$type = "AAAA"
 
 if (!(Test-Path $File_LOG)) {
     New-Item -ItemType File -Path $PSScriptRoot -Name ($FileName) | Out-Null
@@ -30,7 +30,7 @@ if ($what_ip -eq 'external') {
     $ip = $ip.Trim()
 }
 elseif ($what_ip -eq 'internal') {
-    $response = Get-NetIPAddress -AddressFamily IPv4 -InterfaceAlias $what_interface
+    $response = Get-NetIPAddress -AddressFamily IPv6 -InterfaceAlias $what_interface -SuffixOrigin "Link" -PrefixOrigin "RouterAdvertisement"
     $ip = $response.IPAddress.Trim()
 }
 else {
