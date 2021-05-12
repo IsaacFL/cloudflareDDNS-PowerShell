@@ -51,11 +51,11 @@ $dns_record_id = $response.result[0].id.Trim()
 $dns_record_ip = $response.result[0].content.Trim()
 
 if ( $dns_record_ip -eq $ip) {
-    Write-Output "==> No changes needed! DNS Recored currently is set to $dns_record_ip" | Tee-Object $File_LOG -Append
+    Write-Output "==> No changes needed! DNS Record currently is set to $dns_record_ip" | Tee-Object $File_LOG -Append
     Exit
 }
 else {
-    Write-Output "==> DNS Recored currently is set to $dns_record_ip. Updating!!!" | Tee-Object $File_LOG -Append
+    Write-Output "==> DNS Record currently is set to $dns_record_ip. Updating!!!" | Tee-Object $File_LOG -Append
 }
 
 ##### updates the dns record
