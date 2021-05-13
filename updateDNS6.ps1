@@ -26,7 +26,7 @@ Write-Output "==> $DATE" | Tee-Object $File_LOG -Append
 
 
 if ($what_ip -eq 'external') {
-    $ip = Invoke-RestMethod -Uri "https://checkip.amazonaws.com"
+    $ip = Invoke-RestMethod -Uri "https://ipv6.whatismyip.host/"
     $ip = $ip.Trim()
 }
 elseif ($what_ip -eq 'internal') {
