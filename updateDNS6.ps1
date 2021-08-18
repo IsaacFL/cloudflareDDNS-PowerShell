@@ -2,11 +2,11 @@
 
 ##### Config Params
 $what_ip = "internal"                                              ##### Which IP should be used for the record: internal only for ipv6
-$what_interface = "Ethernet0"                                       ##### For internal IP, provide interface name
+$what_interface = "Ethernet"                                       ##### For internal IP, provide interface name
 $dns_record = "ddns.example.com"                                        ##### DNS AAAA record which will be updated
 $zoneid = "ChangeMe"                        ##### Cloudflare's Zone ID
 $proxied = $false                                                  ##### Use Cloudflare proxy on dns record true/false
-$ttl = 120                                                          ##### 120-7200 in seconds or 1 for Auto
+$ttl = 1                                                          ##### 120-7200 in seconds or 1 for Auto
 $cloudflare_api_token = "ChangeMe"  ##### Cloudflare API Token keep it private!!!!
   
 ##### updateDNS.log file of the last run for debug
