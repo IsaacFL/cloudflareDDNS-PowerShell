@@ -51,7 +51,7 @@ Right click on updateDNS.ps1 click __Run with PowerShell__
 
 ## Automation With Windows Task Scheduler
 
-Run At boot Example with the updateDNS.ps1 C:\updateDNS.ps1:
+Run At boot Example with the updateDNS.ps1 C:\Users\USER\cloudflareDDNS-PowerShell-main\updateDNS6.ps1:
 
 * Open Task Scheduler
 * Action -> Crate Task
