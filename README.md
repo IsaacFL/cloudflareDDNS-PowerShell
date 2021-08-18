@@ -25,7 +25,7 @@ Choose __A__ for __all__
 ## Installation
 
 [Download the cloudflareDDNS-PowerShell zip file](https://github.com/IsaacFL/cloudflareDDNS-PowerShell/archive/main.zip) & Unzip it
-Extract to Personal Folder (C:\Users\name)
+Extract to Personal Folder (C:\Users\USER)
 
 
 
@@ -65,7 +65,7 @@ Run At boot Example with the updateDNS.ps1 C:\updateDNS.ps1:
     * New...
     * Action: Start a Program
     * Program/script: _C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe_
-    * Add arguments (optional): _-File C:\updateDNS.ps1_
+    * Add arguments (optional): _-File C:\Users\USER\cloudflareDDNS-PowerShell-main\updateDNS6.ps1_
     * ok
     * Enter your user's password when prompted
 
