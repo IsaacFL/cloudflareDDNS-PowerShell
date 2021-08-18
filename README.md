@@ -25,10 +25,13 @@ Choose __A__ for __all__
 ## Installation
 
 [Download the cloudflareDDNS-PowerShell zip file](https://github.com/IsaacFL/cloudflareDDNS-PowerShell/archive/main.zip) & Unzip it
+Extract to Personal Folder (C:\Users\name)
+
+
 
 ## Parameters
 
-Update the config parameters at updateDNS.ps1 by editing the file
+Update the config parameters at updateDNS6.ps1 by editing the file
 
 | __Option__           | __Example__      | __Description__                                           |
 | -------------------- | ---------------- | --------------------------------------------------------- |
@@ -37,7 +40,7 @@ Update the config parameters at updateDNS.ps1 by editing the file
 | dns_record           | ddns.example.com | DNS __A__ record which will be updated                    |
 | zoneid               | ChangeMe         | Cloudflare's Zone ID                                      |
 | proxied              | false            | Use Cloudflare proxy on dns record true/false             |
-| ttl                  | 120              | 120-7200 in seconds or 1 for Auto                         |
+| ttl                  | 1                | 120-7200 in seconds or 1 for Auto                         |
 | cloudflare_api_token | ChangeMe         | Cloudflare API Token __KEEP IT PRIVET!!!!__               |
 
 ## Running The Script
