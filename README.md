@@ -43,7 +43,7 @@ Update the config parameters at updateDNS6.ps1 by editing the file
 | zoneid               | ChangeMe         | Cloudflare's Zone ID                                      |
 | proxied              | false            | Use Cloudflare proxy on dns record true/false             |
 | ttl                  | 1                | 120-7200 in seconds or 1 for Auto                         |
-| cloudflare_api_token | ChangeMe         | Cloudflare API Token __KEEP IT PRIVET!!!!__               |
+| cloudflare_api_token | ChangeMe         | Cloudflare API Token __KEEP IT PRIVATE!!!!__               |
 
 ## Running The Script
 
@@ -54,7 +54,7 @@ Right click on updateDNS.ps1 click __Run with PowerShell__
 Run At boot Example with the updateDNS.ps1 C:\Users\USER\cloudflareDDNS-PowerShell-main\updateDNS6.ps1:
 
 * Open Task Scheduler
-* Action -> Crate Task
+* Action -> Create Task
 * __General Menu__
     * Name: updateDNS
     * Run whether user is logged on or not
