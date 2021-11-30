@@ -66,7 +66,7 @@ Run At boot Example with the updateDNS.ps1 C:\Users\USER\cloudflareDDNS-PowerShe
 * __Actions__
     * New...
     * Action: Start a Program
-    * Program/script: _C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe_
+    * Program/script: _Powershell_
     * Add arguments (optional): _-File C:\Users\USER\cloudflareDDNS-PowerShell-main\updateDNS6.ps1_
     * ok
     * Enter your user's password when prompted
