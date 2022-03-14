@@ -20,10 +20,7 @@ if (!(Test-Path $File_LOG)) {
     New-Item -ItemType File -Path $PSScriptRoot -Name ($FileName) | Out-Null
 }
 
-Clear-Content "$PSScriptRoot\.updateDNS.log"
 $DATE = Get-Date -UFormat "%Y/%m/%d %H:%M:%S"
-Write-Output "==> $DATE" | Tee-Object $File_LOG -Append
-
 
 if ($what_ip -eq 'external') {
     $ip = Invoke-RestMethod -Uri "https://ipv6.whatismyip.host/"
@@ -34,9 +31,9 @@ elseif ($what_ip -eq 'internal') {
     $ip = $response.IPAddress.Trim()
 }
 else {
-    Write-Output "missing or incorrect what_ip/what_interface parameter" 
+    Write-Output "$DATE ==> missing or incorrect what_ip/what_interface parameter" 
 }
-Write-Output "==> Current IP is $ip" | Tee-Object $File_LOG -Append
+Write-Output "$DATE ==> Extracted IP is $ip" | Tee-Object $File_LOG -Append
 
 
 
@@ -50,12 +47,13 @@ $response = Invoke-RestMethod @dns_record_info
 $dns_record_id = $response.result[0].id.Trim()
 $dns_record_ip = $response.result[0].content.Trim()
 
+
 if ( $dns_record_ip -eq $ip) {
-    Write-Output "==> No changes needed! DNS Record currently is set to $dns_record_ip" | Tee-Object $File_LOG -Append
+    Write-Output "$DATE ==> No changes needed! DNS Record currently is set to $dns_record_ip" | Tee-Object $File_LOG -Append
     Exit
 }
 else {
-    Write-Output "==> DNS Record currently is set to $dns_record_ip. Updating!!!" | Tee-Object $File_LOG -Append
+    Write-Output "$DATE ==> DNS Record currently is set to $dns_record_ip. Updating!!!" | Tee-Object $File_LOG -Append
 }
 
 ##### updates the dns record
@@ -77,10 +75,10 @@ $updateRecord = @{
 $response = Invoke-RestMethod @updateRecord
 
 if ($response.success -eq "True") {
-    Write-Output "==> $dns_record DNS Record Updated To: $ip" | Tee-Object $File_LOG -Append
+    Write-Output "$DATE ==> $dns_record DNS Record Updated To: $ip" | Tee-Object $File_LOG -Append
     Exit
 }
 else {
-    Write-Output "==> FAILED $response" | Tee-Object $File_LOG -Append
+    Write-Output "$DATE ==> FAILED $response" | Tee-Object $File_LOG -Append
     
 }
